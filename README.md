@@ -16,7 +16,9 @@ In this document, I will outline the process of analyzing ChIP-seq data in the c
 
 -   **Peak detection - normr**
 
-    ![](https://github.com/chingyaousf/Regulatory-Genomic-Sequencing-ChIP-seq-data-analysis/blob/main/plots/Peak%20detection.png?raw=true)![](https://github.com/chingyaousf/Regulatory-Genomic-Sequencing-ChIP-seq-data-analysis/blob/main/plots/Peak%20annotation.png?raw=true)
+    ![](https://github.com/chingyaousf/Regulatory-Genomic-Sequencing-ChIP-seq-data-analysis/blob/main/plots/Peak%20detection.png?raw=true)
+
+    ![](https://github.com/chingyaousf/Regulatory-Genomic-Sequencing-ChIP-seq-data-analysis/blob/main/plots/Peak%20annotation.png?raw=true)
 
 ```{=html}
 <!-- -->
