@@ -44,4 +44,8 @@ Material source: <https://github.com/tengmx/gms7930/tree/master>
 
 RGS-practice
 
+gms7930-rgs-windows_02.pdf
+
+gms7930-rgs-windows_02.html
+
 **Data available in the data folder**
