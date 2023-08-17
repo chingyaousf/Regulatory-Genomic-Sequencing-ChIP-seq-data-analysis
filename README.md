@@ -20,9 +20,6 @@ In this document, I will outline the process of analyzing ChIP-seq data in the c
 
     ![](https://github.com/chingyaousf/Regulatory-Genomic-Sequencing-ChIP-seq-data-analysis/blob/main/plots/Peak%20annotation.png?raw=true)
 
-```{=html}
-<!-- -->
-```
 -   **Peak annotation - ChIPseeker**
 
     ![](https://github.com/chingyaousf/Regulatory-Genomic-Sequencing-ChIP-seq-data-analysis/blob/main/plots/Peak%20annotation_02.png?raw=true)
