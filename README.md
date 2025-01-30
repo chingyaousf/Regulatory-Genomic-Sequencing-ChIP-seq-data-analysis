@@ -1,51 +1,115 @@
-# Regulatory Genomic Sequencing: ChIP-seq data analysis
+# Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets
 
-**R packages:**
+### Pathway Analysis Overview
 
-**Exploratory data analysis - GenomicAlignments**
+**Pathway analysis** is a crucial bioinformatics approach used to interpret gene expression data by identifying biological pathways that are significantly enriched in a given set of genes. By understanding these pathways, researchers can uncover the biological mechanisms underlying various conditions or phenotypes. This repository contains the code and results for a pathway analysis of single-cell RNA-seq data, utilizing three key gene sets: GO (Gene Ontology), Hallmark, and C2
 
-**Peak detection - normr**
+(Curated Pathways). The analysis was performed at both the whole cluster level and for individual clusters, with pathways annotated to define subset cell types within each cluster.
 
-**Peak annotation - ChIPseeker**
+### Data and Methods
 
-## Project Overview:
+-   **Data Sources**: Single-cell RNA-seq data.
 
-In this document, I will outline the process of analyzing ChIP-seq data in the context of Regulatory Genomic Sequencing. The content is derived from the lecture titled '**Applied Bioinformatics - Genomic Regulatory Sequencing Data Analysis.**' The lecture materials cover Regulatory Genomic Sequencing and include a practical guide for ChIP-seq data analysis. These resources are provided as PDF files, and the accompanying code is available in a markdown file.
+-   **Gene Sets**: GO (Biological Process), Hallmark, and C2:CP (Curated Pathways).
 
--   **Exploratory data analysis - GenomicAlignments**![](https://github.com/chingyaousf/Regulatory-Genomic-Sequencing-ChIP-seq-data-analysis/blob/main/plots/Exploratory%20data%20analysis.png?raw=true)
+-   **Tools Used**:
 
--   **Peak detection - normr**
+    -   `Seurat` for data processing and differential expression analysis.
 
-    ![](https://github.com/chingyaousf/Regulatory-Genomic-Sequencing-ChIP-seq-data-analysis/blob/main/plots/Peak%20detection.png?raw=true)
+    -   `clusterProfiler` for enrichment analysis.
 
-    ![](https://github.com/chingyaousf/Regulatory-Genomic-Sequencing-ChIP-seq-data-analysis/blob/main/plots/Peak%20annotation.png?raw=true)
+    -   `msigdbr` for accessing MSigDB gene sets.
 
--   **Peak annotation - ChIPseeker**
+    -   `ggplot2`, `pheatmap`, `enrichplot` for visualization.
 
-    ![](https://github.com/chingyaousf/Regulatory-Genomic-Sequencing-ChIP-seq-data-analysis/blob/main/plots/Peak%20annotation_02.png?raw=true)
+-   **Analysis Flow**:
 
-    ![](https://github.com/chingyaousf/Regulatory-Genomic-Sequencing-ChIP-seq-data-analysis/blob/main/plots/Peak%20annotation_03.png?raw=true)
+    1.  Load and preprocess the Seurat object.
 
-    ![](https://github.com/chingyaousf/Regulatory-Genomic-Sequencing-ChIP-seq-data-analysis/blob/main/plots/tagHeatmap.png?raw=true)
+    2.  Perform differential expression analysis (DEA) across clusters.
 
-    ![](https://github.com/chingyaousf/Regulatory-Genomic-Sequencing-ChIP-seq-data-analysis/blob/main/plots/pickgenename%20ABCG1.png?raw=true)
+    3.  Conduct enrichment analysis for GO, Hallmark, and C2:CP gene sets.
 
-## References:
+    4.  Visualize top pathways and annotate subset cell types.
 
-Material source: <https://github.com/tengmx/gms7930/tree/master>
+### Reproducing the Analysis
 
-## Blog:
+1.  **Set Up the Environment**: Install necessary R packages.
 
-<https://ssidmarine.wordpress.com/2023/08/17/regulatory-genomic-sequencing-chip-seq-data-analysis/>
+    ```         
+    install.packages('tidyverse')
+    BiocManager::install(c("clusterProfiler", "org.Hs.eg.db"))
+    install.packages("msigdbr")
+    ```
 
-## Access data:
+2.  **Run the Analysis**:
 
-2023 USF RGS
+    Execute the R scripts
 
-RGS-practice
+3.  **Visualize Results**
 
-gms7930-rgs-windows_02.pdf
+### Results
 
-gms7930-rgs-windows_02.html
+-   **GO Enrichment**:
 
-**Data available in the data folder**
+    -   Identified key biological processes across all clusters and specific clusters.
+
+        ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/GO/GO_Enrichment_Cluster_0_barplot_02.png?raw=true)
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/GO/GO_Enrichment_Cluster_0_dotplot_02.png?raw=true)
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/GO/top_10_GO_pathways_barplot_b_cell.png?raw=true)
+
+        ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/GO/top_10_hallmark_pathways_barplot_mono_mac.png?raw=true)
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/GO/top_10_pathways_barplot_nk_t_cell.png?raw=true)
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/GO/Top_10_GO_Pathways_heatmap_b_cell.png?raw=true)
+
+    -   
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/GO/Top_10_Pathways_heatmap_nk_t_cell.png?raw=true)![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/GO/Top_10_GO_Pathways_heatmap_mono_mac.png?raw=true)
+
+-   **Hallmark Gene Sets**:
+
+    -   Highlighted hallmark pathways across all clusters and specific clusters.
+
+        ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/hallmark/hallmark_Enrichment_Cluster_0_barplot_02.png?raw=true)
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/hallmark/hallmark_Enrichment_Cluster_0_dotplot_02.png?raw=true)
+
+    -   
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/hallmark/top_10_hallmark_pathways_barplot_b_cell.png?raw=true)
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/hallmark/top_10_hallmark_pathways_barplot_mono_mac.png?raw=true)
+
+        ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/hallmark/top_10_hallmark_pathways_barplot_nk_t_cell.png?raw=true)
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/hallmark/Top_10_hallmark_Pathways_heatmap_b_cell.png?raw=true)
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/hallmark/Top_10_hallmark_Pathways_heatmap_mono_mac.png?raw=true)
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/hallmark/Top_10_hallmark_Pathways_heatmap_nk_t_cell_viridis.png?raw=true)
+
+-   **C2:CP Pathways**:
+
+    -   Provided insight into curated pathways involved in across all clusters and specific clusters.
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/C2:CP/c2_cp_Enrichment_Cluster_0_barplot_02.png?raw=true)
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/C2:CP/c2_cp_Enrichment_Cluster_0_dotplot_02.png?raw=true)
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/C2:CP/top_10_c2_cp_pathways_barplot_b_cell.png?raw=true)
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/C2:CP/top_10_c2_cp_pathways_barplot_mono_mac.png?raw=true)
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/C2:CP/top_10_c2_cp_pathways_barplot_nk_t_cell.png?raw=true){width="3600"}![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/C2:CP/Top_10_c2_cp_Pathways_heatmap_b_cell.png?raw=true)
+
+    -   ![](https://github.com/chingyaousf/Single-Cell-RNA-seq-Pathway-Analysis-using-GO-Hallmark-and-C2-Gene-Sets/blob/main/plots/C2:CP/Top_10_c2_cp_Pathways_heatmap_mono_mac.png?raw=true)
+
+### Future Directions
+
+-   Extend the analysis to additional gene sets or custom pathway databases.
+
+-   Refine cell type annotations based on pathway enrichment patterns.
